@@ -1,7 +1,7 @@
-let guestMail = document.getElementById("guest_mail")
+let guestMail = document.getElementById("guest_mail");
 
-const sendButton = document.getElementById("send")
-
+const sendButton = document.getElementById("send");
+const invite = document.getElementById("invitation");
 
 
 
@@ -12,20 +12,19 @@ sendButton.addEventListener("click",
     
 
     function(){
-        let newMail = guestMail
+        let newMail = guestMail.value
 
         if (mailList.includes(newMail)) {
-            console.log("esiste già");
+            alert("Sei già registrato!!");
         } else {
             mailList.push(guestMail.value);
             // console.log("aggiunto agli invitati");
+            invite.innerHTML += ("Ti abbiamo aggiunto agli invitati!")
         }
 
 
 
-        for (let i = 0; i < mailList.length; i++) {
-            console.log(mailList[i]);
-        }
+
     }
 
 
